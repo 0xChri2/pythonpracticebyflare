@@ -1,5 +1,12 @@
 import PySimpleGUI as sg
 
-#create window
-sg.Window('Window Title', layout=[[sg.Text('This is a text element')],  [sg.Button('OK')]])
+sg.theme('Dark Grey 13')
 
+layout = [[sg.Text('Filename')],
+          [sg.Input(), sg.FileBrowse()],
+          [sg.OK(), sg.Cancel()]]
+
+window = sg.Window('Get filename example', layout)
+
+event, values = window.read()
+window.close()
