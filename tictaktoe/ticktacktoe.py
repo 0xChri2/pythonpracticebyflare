@@ -1,26 +1,25 @@
 import PySimpleGUI as sg
 
 error = 0
-sg.theme('Dark Grey 13')
-layout =[[sg.Text('Tic Tac Toe')],
-        [sg.Text('Player 1', size=(10, 1)), sg.InputText('Player 1', size=(10, 1))],
-        [sg.Text('Player 2', size=(10, 1)), sg.InputText('Player 2', size=(10, 1))],
+
+layoutlogin =[[sg.Text('Tic Tac Toe')],
+        [sg.Text('Player 1', size=(10, 1)), sg.InputText(key='-IN2-', size=(10, 1))],
+        [sg.Text('Player 2', size=(10, 1)), sg.InputText(key='-IN3-', size=(10, 1))],
         [sg.Button('Play')]]
-    
+
+layoutgame = layout =[[sg.Text('Tic Tac Toe')],
+            [sg.Text('Player 1:', size=(10, 1)),sg.Text(key='-OUT2-', size=(10, 1)),sg.Text('Player 2:', size=(10, 1)),sg.Text(key='-OUT3-', size=(10, 1))]]
+
+layout = [[sg.Column(layoutlogin, key='-COL1-', visible=True), sg.Column(layoutgame, visible=False, key='-COL2-')]]
+
+sg.theme('Dark Grey 13')
 window = sg.Window('Tictaktoe', layout)
-event, values = window.read()
 
-Player1 = values[0]
-Player2 = values[1]
-print(Player1)
-print(Player2)
-
-if Player1 == Player2:
-    print("Player 1 and Player 2 are the same")
-    error = 1
-else:
-    layout =[[sg.Text('Tic Tac Toe')],
-    [sg.Test(Player1, size=(10, 1)), sg.Test(Player2, size=(10, 1))]]
-    window.refresh()
-
+while True:
+    event, values = window.read()
+    print(event, values)
+    if event == 'Play':
+        window['-COL1-'].update(visible=False)
+        window['-COL2-'].update(visible=True)
+    
 window.close()
