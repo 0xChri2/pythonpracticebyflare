@@ -1,2 +1,1 @@
-# pythonpractice
- Python practice
+Python is shit
