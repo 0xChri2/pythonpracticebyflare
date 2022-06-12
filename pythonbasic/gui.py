@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 
+#oh look a darktheme
 sg.theme('Dark Grey 13')
 
 layout = [[sg.Text('Filename')],
