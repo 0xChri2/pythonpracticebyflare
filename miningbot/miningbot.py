@@ -43,6 +43,8 @@ detectandmove('backtogame.PNG')
 while True:
     move('w', 0.5, 'walking')
     mining(1)
-    
-
+    if detect_image('backtogame.PNG'):
+       break
+    else:
+        continue
 
