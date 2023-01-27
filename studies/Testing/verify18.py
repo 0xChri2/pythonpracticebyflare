@@ -10,4 +10,3 @@ while(count < int(peranz)):
     else:
         count = count + 1
 print(persu18)
-        
