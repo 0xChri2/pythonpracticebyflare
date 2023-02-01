@@ -25,5 +25,5 @@ stud2 = {}
 sortedkeys = Bubbelsort(list(stud.keys()))
 print(sortedkeys)
 for i in range(0, len(sortedkeys)-1):
-    stud2[sortedkeys(i)] = stud[sortedkeys]
+    stud2[sortedkeys[i]] = stud[sortedkeys]
     
