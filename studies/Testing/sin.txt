@@ -1,0 +1,26 @@
+ALGORITHMUS sin(x, epsilon; y)
+BESCHREIBUNG
+    Berechnet den sin(x) zu einer genauigkeit epsilon (je kleiner desto genauer)
+Lokale Größen:
+    ganze zahl: vorzeichen, i
+    reelle zahlen: zähler, nenner, summand, summe, alt
+Übernahmeparameter:
+    reelle zahl: x, epsilon
+Rückgabeparameter:
+    relle zahl: y
+KERNALGORITHMUS
+    i = 0
+    vorzeichen = 1
+    zähler = x
+    nenner = 1
+    summe = vorzeichen * zähler/nenner
+    WIEDERHOLE
+        i+= 1
+        vorzeichen *= -1
+        zähler *= x * x
+        nenner *= (i*2) * (i*2+1)
+        summand = vorzeichen * zähler/nenner
+        summe += summand
+    SOLANGE |summand - alt| < epsilon
+    y= summe
+    ausgabe y
