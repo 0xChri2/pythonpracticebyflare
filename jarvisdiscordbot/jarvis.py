@@ -62,5 +62,5 @@ async def on_ready():
             await channel_id.send(embed=embed)
 
             # Warte eine bestimmte Zeit, bevor die nächste Anfrage gesendet wird
-            await asyncio.sleep(60)
+            await asyncio.sleep(3600)
 bot.run('Bot Token')
